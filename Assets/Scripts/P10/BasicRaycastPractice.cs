@@ -35,6 +35,7 @@ public class BasicRaycastPractice : MonoBehaviour
         Vector3 origin = _cameraTransform.position;
         Vector3 direction = _cameraTransform.forward;
 
+        // untuk menggambar raycast yg dibuat
         Debug.DrawRay(origin, direction * _rayDistance, Color.yellow);
 
         if (Physics.Raycast(origin, direction, out RaycastHit hit, _rayDistance))
