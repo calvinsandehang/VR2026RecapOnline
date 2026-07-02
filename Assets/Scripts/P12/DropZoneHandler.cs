@@ -29,6 +29,8 @@ public class DropZoneHandler : MonoBehaviour
     private bool isCompleted;
     private Droppable lastWrongDroppable;
 
+    public bool IsDestroyedOnDrop;
+
     private void OnTriggerEnter(Collider other)
     {
         TryAcceptDroppable(other);
@@ -99,6 +101,11 @@ public class DropZoneHandler : MonoBehaviour
 
         SetStatus("Correct object dropped. Objective complete.");
         _onCorrectDrop?.Invoke();
+
+        if (IsDestroyedOnDrop)
+        {
+            Destroy(droppable.gameObject);
+        }
     }
 
     private void SnapObjectIfNeeded(Transform targetObject)

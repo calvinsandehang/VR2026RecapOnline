@@ -74,7 +74,7 @@ public class BasicVRInteractionController : MonoBehaviour
 
         if (Input.GetKeyDown(_spawnKey) && _spawner != null)
         {
-            _spawner.Spawn();
+            _spawner.SpawnNewObject();
         }
     }
 
