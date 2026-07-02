@@ -43,11 +43,7 @@ public class DropZoneHandler : MonoBehaviour
 
     private void TryAcceptDroppable(Collider other)
     {
-        if (isCompleted)
-        {
-            return;
-        }
-
+   
         Droppable droppable = other.GetComponentInParent<Droppable>();
 
         if (droppable == null || droppable.IsDropped)

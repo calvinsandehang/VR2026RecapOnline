@@ -83,11 +83,11 @@ public class BasicVRInteractionController : MonoBehaviour
         currentGrabbable = null;
         currentPushable = null;
 
-        if (heldObject != null)
+        /*if (heldObject != null)
         {
             SetPrompt("Press E or Q to drop object");
             return;
-        }
+        }*/
 
         if (_cameraTransform == null)
         {
@@ -163,15 +163,18 @@ public class BasicVRInteractionController : MonoBehaviour
 
     private void TryPushCurrentObject()
     {
-        if (heldObject != null)
-        {
-            SetStatus("Drop held object before pushing");
-            return;
-        }
-
         if (currentPushable == null)
         {
             SetStatus("No pushable object detected");
+            return;
+        }
+
+
+        if (heldObject != null)
+        {
+            //SetStatus("Drop held object before pushing");
+            DropHeldObject();
+            currentPushable.Push(_cameraTransform.forward, _pushForce);
             return;
         }
 

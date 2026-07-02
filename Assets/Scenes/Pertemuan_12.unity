@@ -1042,10 +1042,10 @@ MonoBehaviour:
   _onCorrectDrop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 167680939}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1347297414}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: Spawn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1057,6 +1057,7 @@ MonoBehaviour:
   _onWrongDrop:
     m_PersistentCalls:
       m_Calls: []
+  IsDestroyedOnDrop: 1
 --- !u!65 &789179535
 BoxCollider:
   m_ObjectHideFlags: 0
