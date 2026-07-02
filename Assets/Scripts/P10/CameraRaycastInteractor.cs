@@ -49,8 +49,9 @@ public class CameraRaycastInteractor : MonoBehaviour
         {
             RaycastTargetObject target = hit.collider.GetComponent<RaycastTargetObject>();
 
-            if (target != null)
+            if (target != null) // kalo punya RaycastTargetObject
             {
+                // logic kalian
                 SetCurrentTarget(target);
                 return;
             }
